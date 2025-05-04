@@ -2,7 +2,14 @@ import { Transform } from 'node:stream';
 
 import { directoryController } from '../modules/directory/directory.controller.js';
 import { parseUserCliCommand } from '../modules/cli-parser/cli-parser.js';
-import { readFileToConsole, createFile, renameFile, copyFile, deleteFile, moveFile } from '../modules/fs-operations/index.js';
+import {
+  readFileToConsole,
+  createFile,
+  renameFile,
+  copyFile,
+  deleteFile,
+  moveFile,
+} from '../modules/fs-operations/index.js';
 import { hashCalc } from '../modules/hash/hash.js';
 import { compress } from '../modules/archive/compress.js';
 import { decompress } from '../modules/archive/decompress.js';
@@ -33,6 +40,9 @@ class Controller extends Transform {
           break;
         case COMMANDS.DIR.LIST:
           await directoryController.listSortedDirectory();
+          break;
+        case COMMANDS.DIR.CREATE:
+          await directoryController.createDirectory(firstArg, currentDirectory);
           break;
         case COMMANDS.FILE.READ:
           await readFileToConsole(firstArg, currentDirectory);
@@ -74,6 +84,6 @@ class Controller extends Transform {
       callback(null, chunk);
     }
   }
-};
+}
 
 export const controller = new Controller();

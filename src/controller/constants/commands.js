@@ -1,10 +1,10 @@
-
 export const COMMANDS = {
   EXIT: '.exit',
   DIR: {
     UP: 'up',
     CHANGE: 'cd',
-    LIST: 'ls'
+    LIST: 'ls',
+    CREATE: 'mkdir',
   },
   FILE: {
     READ: 'cat',
@@ -12,10 +12,10 @@ export const COMMANDS = {
     RENAME: 'rn',
     COPY: 'cp',
     DELETE: 'rm',
-    MOVE: 'mv'
-  }, 
+    MOVE: 'mv',
+  },
   HASH: 'hash',
   COMPRESS: 'compress',
   DECOMPRESS: 'decompress',
-  OS: 'os'
-}
+  OS: 'os',
+};
