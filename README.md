@@ -1,2 +1,3 @@
 # file-manager-nodejs
-Task "File manager". RS School Course "NodeJS 2025 Q2"
+
+This repository is the solution to the assignment https://github.com/AlreadyBored/nodejs-assignments/blob/main/assignments/file-manager/assignment.md
